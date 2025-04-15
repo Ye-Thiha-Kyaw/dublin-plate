@@ -5,25 +5,27 @@ const menuItems = [
         name: "Dublin Coddle Croquettes",
         description: "Crispy potato croquettes with braised sausage, bacon, and herb cream",
         price: 9.00,
-        image: "images/crispy.jpeg", // Potato croquettes image
+        image: "images/crispy.jpeg", 
         category: "starters",
-        source:"www.google"
+        source:"photo ref : https://italianfoodforever.com/2024/02/cheese-stuffed-potato-croquettes/ "
     },
     {
         id: 2,
         name: "Smoked Salmon Boxty",
         description: "Traditional potato pancake with Irish smoked salmon, crème fraîche, and dill",
         price: 11.00,
-        image: "images/salmon.jpeg", // Salmon dish image
-        category: "starters"
+        image: "images/salmon.jpeg", 
+        category: "starters",
+        source:"photo ref : https://cookingwithcocktailrings.com/irish-boxty-with-smoked-salmon-irish-potato-pancakes/ "
     },
     {
         id: 3,
         name: "Free-Range Honey & Mustard Glazed Chicken",
         description: "Crisp skin, braised cabbage, bacon lardons, and creamy colcannon",
         price: 22.00,
-        image: "images/honey.jpeg", // Chicken dish image
-        category: "mains"
+        image: "images/honey.jpeg", 
+        category: "mains",
+        source:"photo ref : https://hellochef.me/recipes/irish-honey-and-mustard-chicken-with-colcannon-mashed-potato-3333"
     },
     {
         id: 4,
@@ -31,31 +33,35 @@ const menuItems = [
         description: "Crisp pork belly, cauliflower purée, apple-fennel slaw, cider reduction",
         price: 26.00,
         image: "images/belly.jpeg",
-        category: "mains"
+        category: "mains",
+        source:"photo ref : https://frozenfish.direct/recipe/pan-seared-scallops-with-cauliflower-puree-and-truffle-oil-recipe/"
     },
     {
         id: 5,
         name: "Herb-Crusted Rack of Irish Lamb",
         description: "Rosemary-Dijon crust, roasted garlic mash, minted pea purée, red wine jus",
         price: 28.00,
-        image: "images/lamb.jpeg", // Lamb rack image
-        category: "mains"
+        image: "images/lamb.jpeg", 
+        category: "mains",
+        source: "photo ref : https://178degrees.com/herb-crusted-lamb-rack-with-red-wine-jus/"
     },
     {
         id: 6,
         name: "Fish & Chips",
         description: "Ale-battered cod, triple-cooked chips, mushy peas, and tartar sauce",
         price: 17.00,
-        image: "images/chip.jpeg", // Fish and chips image
-        category: "mains"
+        image: "images/chip.jpeg", 
+        category: "mains",
+        source: "photo ref : https://www.foodrepublic.com/2012/12/18/fr-guide-how-to-eat-fish-and-chips-in-london-and-who-does-it-best/"
     },
     {
         id: 7,
         name: "Traditional Dublin Bay Prawn Pie",
         description: "Buttery puff pastry, prawns, leeks, and tarragon cream sauce",
         price: 24.00,
-        image: "images/pie.jpeg", //  pie image
-        category: "mains"
+        image: "images/pie.jpeg", 
+        category: "mains",
+        source: "photo ref : https://thehappyfoodie.co.uk/recipes/dublin-bay-prawn-and-chicken-pie/"
     },
     {
         id: 8,
@@ -63,39 +69,44 @@ const menuItems = [
         description: "Lemon-herb crust, crushed new potatoes, asparagus, hollandaise",
         price: 28.00,
         image: "images/lemon.webp", 
-        category: "mains"
+        category: "mains",
+        source: "photo ref : https://mealpractice.com/recipes/lemon-herb-grilled-salmon-with-garlic-mashed-potatoes-and-roasted-asparagus-UcpCRjRpWi"
     },
     {
         id: 9,
         name: "The Dublin Burger",
         description: "Dry-aged beef, Cashel Blue cheese, bacon jam, and beer-battered onions",
         price: 15.00,
-        image: "images/burger.jpeg", // Burger image
-        category: "mains"
+        image: "images/burger.jpeg", 
+        category: "mains",
+        source: "photo ref:  https://www.ubereats.com/ie/store/bosh-burger/EY7LkwhtXcWSEr4EOs9bLA"
     },
     {
         id: 10,
         name: "Irish Cheese & Onion Tart",
         description: "Cashel Blue and cheddar custard, caramelized onions, mixed leaf salad",
         price: 15.00,
-        image: "images/tart.jpeg", // Tart image
-        category: "mains"
+        image: "images/tart.jpeg", 
+        category: "mains",
+        source: "photo ref: https://www.irishtimes.com/life-and-style/food-and-drink/recipes/onion-and-cashel-blue-cheese-tart-1.2610579"
     },
     {
         id: 11,
         name: "Baileys Chocolate Pot",
         description: "Silky chocolate mousse with espresso cream",
         price: 8.00,
-        image: "images/chocolate.jpeg", // Chocolate dessert image
-        category: "desserts"
+        image: "images/chocolate.jpeg", 
+        category: "desserts",
+        source: "photo ref:  https://ilovecooking.ie/recipe-items/baileys-chocolate-cheesecake-pots"
     },
     {
         id: 12,
         name: "Homemade Ginger Beer",
         description: "Artisan sodas",
         price: 4.00,
-        image: "images/ginger.jpeg", // Drink image
-        category: "drinks"
+        image: "images/ginger.jpeg", 
+        category: "drinks",
+        source: "photo ref: https://poppyswildkitchen.com/homemade-ginger-ale-4-flavors/"
     }
 ];
 
@@ -147,13 +158,13 @@ function init() {
     // History button event
     historyIcon.addEventListener('click', toggleHistory);
     
-    // Close cart with ESC key
+    // Close cart 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && cartPopup.classList.contains('active')) {
             toggleCart();
         }
     });
-    // Add clear history button event listener
+    // Add clear history button 
     const clearHistoryBtn = document.querySelector('.clear-history-btn');
     if (clearHistoryBtn) {
         clearHistoryBtn.addEventListener('click', clearAllHistory);
@@ -161,13 +172,13 @@ function init() {
    
 }
 
-// Toggle cart popup
+//for toggle cart popup
 function toggleCart() {
     cartPopup.classList.toggle('active');
     cartOverlay.classList.toggle('active');
 }
 
-// Toggle between menu and history views
+// for toggle between menu and history views
 function toggleHistory() {
     menuSection.style.display = menuSection.style.display === 'none' ? 'block' : 'none';
     historySection.style.display = historySection.style.display === 'block' ? 'none' : 'block';
@@ -182,7 +193,7 @@ function toggleHistory() {
     }
 }
 
-// Render menu items
+// to display menu items
 function renderMenu(filter = 'all') {
     menuGrid.innerHTML = '';
     
@@ -198,7 +209,7 @@ function renderMenu(filter = 'all') {
         menuItem.innerHTML = `
             <div class="item-image">
                 <img src="${item.image}" alt="${item.name}">
-                <div class="ref2">Photo ref:Generated from Canva AI </div>
+                <div class="ref2">${item.source} </div>
             </div>
             <div class="item-details">
                 <h3 class="item-name">${item.name}</h3>
@@ -217,23 +228,11 @@ function renderMenu(filter = 'all') {
         
         menuGrid.appendChild(menuItem);
         
-        // Add event listeners for the buttons
         const addToCartBtn = menuItem.querySelector('.add-to-cart');
-        // const minusBtn = menuItem.querySelector('.minus');
-        // const plusBtn = menuItem.querySelector('.plus');
         const quantityInput = menuItem.querySelector('.quantity-input');
         
         addToCartBtn.addEventListener('click', () => addToCart(item.id));
-        // minusBtn.addEventListener('click', () => {
-        //     let value = parseInt(quantityInput.value);
-        //     if (value > 1) {
-        //         quantityInput.value = value - 1;
-        //     }
-        // });
-        // plusBtn.addEventListener('click', () => {
-        //     let value = parseInt(quantityInput.value);
-        //     quantityInput.value = value + 1;
-        // });
+       
     });
 }
 
@@ -257,7 +256,7 @@ function addToCart(itemId) {
     
     const item = menuItems.find(item => item.id === itemId);
     
-    // Check if item already in cart
+    // Check is there any item already in cart or not
     const existingItem = cart.find(cartItem => cartItem.id === itemId);
     
     if (existingItem) {
@@ -361,7 +360,7 @@ function updateCartUI() {
                         <img src="${item.image}" alt="${item.name}">
                     </div>
                     <div>
-                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-name order-header1" >${item.name}</div>
                         <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
                     </div>
                 </div>
@@ -375,21 +374,9 @@ function updateCartUI() {
             
             cartItems.appendChild(cartItem);
             
-            // Add event listeners
-            // const minusBtn = cartItem.querySelector('.minus');
-            // const plusBtn = cartItem.querySelector('.plus');
+           
             const quantityInput = cartItem.querySelector('.quantity-input');
-            // const removeBtn = cartItem.querySelector('.remove-item');
             
-            // minusBtn.addEventListener('click', () => {
-            //     const newQuantity = parseInt(quantityInput.value) - 1;
-            //     updateCartQuantity(item.id, newQuantity);
-            // });
-            
-            // plusBtn.addEventListener('click', () => {
-            //     const newQuantity = parseInt(quantityInput.value) + 1;
-            //     updateCartQuantity(item.id, newQuantity);
-            // });
             
             quantityInput.addEventListener('change', () => {
                 const newQuantity = parseInt(quantityInput.value);
@@ -547,7 +534,7 @@ function clearAllHistory() {
         return;
     }
 
-    if (confirm('Are you sure you want to clear ALL order history? This cannot be undone.')) {
+    if (confirm('Are you sure you want to clear all order history? This cannot be undone.')) {
         orderHistory = [];
         saveOrderHistory();
         updateHistoryUI();
