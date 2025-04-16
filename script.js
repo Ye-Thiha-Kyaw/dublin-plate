@@ -46,34 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
- // Add search functionality
-    const searchButton = document.createElement('button');
-    searchButton.className = 'btn btn-outline-secondary ms-2';
-    searchButton.innerHTML = '<i class="fas fa-search"></i>';
-    searchButton.id = 'searchToggle';
-    
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    navbarCollapse.appendChild(searchButton);
-    
-    // Create search form
-    const searchForm = document.createElement('div');
-    searchForm.id = 'searchForm';
-    searchForm.className = 'mt-3 d-none w-100';
-    searchForm.innerHTML = `
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search our menu...">
-            <button class="btn btn-outline-secondary" type="button">Search</button>
-        </div>
-    `;
-    
-     
-    navbarCollapse.appendChild(searchForm);
-    
-    // Toggle search form
-    document.getElementById('searchToggle').addEventListener('click', function() {
-        const form = document.getElementById('searchForm');
-        form.classList.toggle('d-none');
-    });
 });
 
 // Menu data
