@@ -165,26 +165,25 @@ function init() {
             toggleCart();
         }
     });
+    
     // Add clear history button 
     const clearHistoryBtn = document.querySelector('.clear-history-btn');
     if (clearHistoryBtn) {
         clearHistoryBtn.addEventListener('click', clearAllHistory);
     }
-   
 }
 
-//for toggle cart popup
+// Toggle cart popup
 function toggleCart() {
     cartPopup.classList.toggle('active');
     cartOverlay.classList.toggle('active');
 }
 
-// for toggle between menu and history views
+// Toggle between menu and history views
 function toggleHistory() {
     menuSection.style.display = menuSection.style.display === 'none' ? 'block' : 'none';
     historySection.style.display = historySection.style.display === 'block' ? 'none' : 'block';
     
-    // Update active state
     if (historySection.style.display === 'block') {
         historyIcon.classList.add('active');
         cartIcon.classList.remove('active');
@@ -194,7 +193,7 @@ function toggleHistory() {
     }
 }
 
-// to display menu items
+// Display menu items
 function renderMenu(filter = 'all') {
     menuGrid.innerHTML = '';
     
@@ -210,7 +209,7 @@ function renderMenu(filter = 'all') {
         menuItem.innerHTML = `
             <div class="item-image">
                 <img src="${item.image}" alt="${item.name}">
-                <div class="ref2">${item.source} </div>
+                <div class="ref2">${item.source}</div>
             </div>
             <div class="item-details">
                 <h3 class="item-name">${item.name}</h3>
@@ -218,9 +217,7 @@ function renderMenu(filter = 'all') {
                 <div class="item-footer">
                     <span class="item-price">€${item.price.toFixed(2)}</span>
                     <div class="quantity-control">
-                        
                         <input type="number" class="quantity-input" value="1" min="1">
-                        
                     </div>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
@@ -233,7 +230,6 @@ function renderMenu(filter = 'all') {
         const quantityInput = menuItem.querySelector('.quantity-input');
         
         addToCartBtn.addEventListener('click', () => addToCart(item.id));
-       
     });
 }
 
@@ -256,8 +252,6 @@ function addToCart(itemId) {
     const quantity = parseInt(quantityInput.value);
     
     const item = menuItems.find(item => item.id === itemId);
-    
-    // Check is there any item already in cart or not
     const existingItem = cart.find(cartItem => cartItem.id === itemId);
     
     if (existingItem) {
@@ -274,22 +268,27 @@ function addToCart(itemId) {
     
     saveCart();
     updateCartUI();
-    
-    // Reset quantity
     quantityInput.value = 1;
-    
-    // Show confirmation
     alert(`${quantity} ${item.name} added to cart!`);
-    
-    // Open cart popup
     toggleCart();
 }
 
 // Remove item from cart
 function removeFromCart(itemId) {
-    cart = cart.filter(item => item.id !== itemId);
-    saveCart();
-    updateCartUI();
+    const removedItem = menuItems.find(item => item.id === itemId);
+    
+    if (removedItem && confirm(`Remove ${removedItem.name} from your cart?`)) {
+        cart = cart.filter(item => item.id !== itemId);
+        saveCart();
+        updateCartTotals();
+        updateCartCount();
+        
+        // If cart is empty, show empty message
+        if (cart.length === 0) {
+            emptyCart.classList.remove('hidden');
+            cartSummary.classList.add('hidden');
+        }
+    }
 }
 
 // Update quantity in cart
@@ -304,8 +303,87 @@ function updateCartQuantity(itemId, newQuantity) {
         }
         
         saveCart();
-        updateCartUI();
+        updateCartTotals();
+        updateCartCount();
     }
+}
+
+// Update cart UI
+function updateCartUI() {
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCount.textContent = totalItems;
+    
+    if (cart.length === 0) {
+        emptyCart.classList.remove('hidden');
+        cartSummary.classList.add('hidden');
+    } else {
+        emptyCart.classList.add('hidden');
+        cartSummary.classList.remove('hidden');
+        
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.dataset.id = item.id;
+            
+            cartItem.innerHTML = `
+                <div class="cart-item-container d-flex   ">
+                    <div class="cart-item-details p-3">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div>
+                            <div class="cart-item-name order-header1">${item.name}</div>
+                            <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                        </div>
+                    </div>
+                    <div class="quantity-control">
+                        <input type="number" class="quantity-input" value="${item.quantity}" min="1">
+                        <button class="remove-btn" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            cartItems.appendChild(cartItem);
+            
+            const quantityInput = cartItem.querySelector('.quantity-input');
+            quantityInput.addEventListener('change', () => {
+                const newQuantity = parseInt(quantityInput.value);
+                if (!isNaN(newQuantity)) {
+                    updateCartQuantity(item.id, newQuantity);
+                }
+            });
+            
+            const removeBtn = cartItem.querySelector('.remove-btn');
+            removeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                cartItem.style.opacity = '0';
+                setTimeout(() => {
+                    removeFromCart(item.id);
+                    cartItem.remove();
+                }, 300);
+            });
+        });
+        
+        updateCartTotals();
+    }
+}
+
+// Update cart totals
+function updateCartTotals() {
+    const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const total = subtotal + 2.99; // Delivery fee
+    
+    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    totalAmountEl.textContent = `$${total.toFixed(2)}`;
+}
+
+// Update cart count
+function updateCartCount() {
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCount.textContent = totalItems;
 }
 
 // Save cart to localStorage
@@ -334,71 +412,6 @@ function loadOrderHistory() {
     }
 }
 
-// Update cart UI
-function updateCartUI() {
-    // Update cart count
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    
-    // Show/hide empty cart message
-    if (cart.length === 0) {
-        emptyCart.classList.remove('hidden');
-        cartSummary.classList.add('hidden');
-    } else {
-        emptyCart.classList.add('hidden');
-        cartSummary.classList.remove('hidden');
-        
-        // Render cart items
-        cartItems.innerHTML = '';
-        cart.forEach(item => {
-            const cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.dataset.id = item.id;
-            
-            cartItem.innerHTML = `
-                <div class="cart-item-details">
-                    <div class="cart-item-image">
-                        <img src="${item.image}" alt="${item.name}">
-                    </div>
-                    <div>
-                        <div class="cart-item-name order-header1" >${item.name}</div>
-                        <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
-                    </div>
-                </div>
-                <div class="quantity-control">
-                    
-                    <input type="number" class="quantity-input" value="${item.quantity}" min="1">
-                   
-                    
-                </div>
-            `;
-            
-            cartItems.appendChild(cartItem);
-            
-           
-            const quantityInput = cartItem.querySelector('.quantity-input');
-            
-            
-            quantityInput.addEventListener('change', () => {
-                const newQuantity = parseInt(quantityInput.value);
-                if (!isNaN(newQuantity)) {
-                    updateCartQuantity(item.id, newQuantity);
-                }
-            });
-            
-            // removeBtn.addEventListener('click', () => removeFromCart(item.id));
-        });
-        
-        // Update totals
-        const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-        const deliveryFee = 2.99;
-        const total = subtotal + deliveryFee;
-        
-        subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-        totalAmountEl.textContent = `$${total.toFixed(2)}`;
-    }
-}
-
 // Update order history UI
 function updateHistoryUI() {
     if (orderHistory.length === 0) {
@@ -407,11 +420,8 @@ function updateHistoryUI() {
     } else {
         noHistory.classList.add('hidden');
         historyList.innerHTML = '';
-        
-        // Update history count
         historyCount.textContent = orderHistory.length;
         
-        // Sort orders by date (newest first)
         const sortedHistory = [...orderHistory].sort((a, b) => new Date(b.date) - new Date(a.date));
         
         sortedHistory.forEach(order => {
@@ -476,7 +486,6 @@ function placeOrder() {
     const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
     const notes = document.getElementById('notes').value;
     
-    // Simple validation
     if (!name || !phone || !address) {
         alert('Please fill in all required fields (Name, Phone, Address)');
         return;
@@ -487,13 +496,12 @@ function placeOrder() {
         return;
     }
     
-    // Create order object
     const order = {
         customer: { name, phone, email, address },
         deliveryOption,
         paymentMethod,
         notes,
-        items: [...cart], // Create a copy of the cart
+        items: [...cart],
         subtotal: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
         deliveryFee: 2.99,
         total: cart.reduce((total, item) => total + (item.price * item.quantity), 0) + 2.99,
@@ -501,33 +509,44 @@ function placeOrder() {
         status: 'completed'
     };
     
-    // Add to order history
     orderHistory.push(order);
     saveOrderHistory();
     updateHistoryUI();
     
-    // Show confirmation
     alert(`Order placed successfully! Total: $${order.total.toFixed(2)}\nWe'll contact you shortly to confirm.`);
     
-    // Clear cart
     cart = [];
     saveCart();
     updateCartUI();
     
-    // Clear form
     document.getElementById('name').value = '';
     document.getElementById('phone').value = '';
     document.getElementById('email').value = '';
     document.getElementById('address').value = '';
     document.getElementById('notes').value = '';
     
-    // Close cart popup
     toggleCart();
-    
-    // Switch to history view
     toggleHistory();
+    
+    // Clear cart array
+    cart = [];
+    
+    // Save empty cart to localStorage
+    saveCart();
+    
+    // Update UI to show empty state
+    cartItems.innerHTML = '';
+    emptyCart.classList.remove('hidden');
+    cartSummary.classList.add('hidden');
+    
+    // Reset totals
+    subtotalEl.textContent = '$0.00';
+    totalAmountEl.textContent = '$0.00';
+    
+    // Update cart count
+    cartCount.textContent = '0';
 }
-// history clear
+
 // Clear all order history
 function clearAllHistory() {
     if (orderHistory.length === 0) {
@@ -544,14 +563,7 @@ function clearAllHistory() {
     }
 }
 
-
-
-
-
-
-
 // Initialize the app
 init();
-
 
 

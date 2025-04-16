@@ -711,6 +711,28 @@ textarea {
   color: var(--primary-color) !important;
   font-weight: 600;
 }
+
+
+/* Add to your style.css */
+.cart-item {
+  transition: all 0.3s ease;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.remove-btn:hover {
+  color: #a71d2a;
+  transform: scale(1.1);
+}
+
 /* blog css end */
 
 @media (max-width: 768px) {
