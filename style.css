@@ -247,7 +247,7 @@ body {
   display: none;
 }
 
-h2 {
+.h2-order {
   color: var(--dark-color);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
