@@ -195,7 +195,6 @@ body {
   }
 }
 
-
 .history-actions {
   text-align: right;
   margin-bottom: 15px;
@@ -712,7 +711,6 @@ textarea {
   font-weight: 600;
 }
 
-
 /* Add to your style.css */
 .cart-item {
   transition: all 0.3s ease;
@@ -777,4 +775,16 @@ footer {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: #ff9a3c;
+}
+.card-title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+.ad-text {
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+.card-text {
+  font-family: "Roboto", sans-serif;
+}
+.lead {
+  font-family: "Roboto", sans-serif;
 }
