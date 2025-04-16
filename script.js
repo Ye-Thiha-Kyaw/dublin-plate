@@ -66,8 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
+     
     navbarCollapse.appendChild(searchForm);
-
+    
+    // Toggle search form
+    document.getElementById('searchToggle').addEventListener('click', function() {
+        const form = document.getElementById('searchForm');
+        form.classList.toggle('d-none');
+    });
+});
 
 // Menu data
 const menuItems = [
