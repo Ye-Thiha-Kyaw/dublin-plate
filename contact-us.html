@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gourmet Delight - Online Order</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- home links start-->
+    <link rel="shortcut icon" href="images/WhatsApp Image 2025-04-13 at 9.33.17
+    AM.jpeg"image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- home links end -->
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <p>
+        <a href=""><img src="images/logo.jpeg" alt="logo" class="logo" /> </a>
+      </p>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dublin Plate</a>
+
+        <!-- Toggler Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vision.html">Our vision</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="order_page.html">Order Online</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutUs.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <div class="history-icon nav-link" title="Order History">
+                <i class="fas fa-history"></i>
+                <span class="history-count">0</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="cart-icon nav-link" title="Your Cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="text-center mt-4 mb-5">
+      <h1>Welcome to Dublin Plate</h1>
+    </header>
+    <div class="container">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            value="Mark"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            value="Otto"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label"
+            >Username</label
+          >
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom03"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid city.</div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom05"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid zip.</div>
+        </div>
+        <div class="col-12 mt-4 mb-2">
+          <h5>Reservation Details</h5>
+          <hr />
+        </div>
+
+        <div class="col-md-6">
+          <label for="reservationDate" class="form-label">Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="reservationDate"
+            required
+          />
+          <div class="invalid-feedback">
+            Please select a date for your reservation.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="reservationTime" class="form-label">Time</label>
+          <select class="form-select" id="reservationTime" required>
+            <option selected disabled value="">Select time...</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>6:00 PM</option>
+            <option>6:30 PM</option>
+            <option>7:00 PM</option>
+            <option>7:30 PM</option>
+            <option>8:00 PM</option>
+            <option>8:30 PM</option>
+            <option>9:00 PM</option>
+          </select>
+          <div class="invalid-feedback">Please select a reservation time.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="partySize" class="form-label">Number of Guests</label>
+          <select class="form-select" id="partySize" required>
+            <option selected disabled value="">Select party size...</option>
+            <option>1 person</option>
+            <option>2 people</option>
+            <option>3 people</option>
+            <option>4 people</option>
+            <option>5 people</option>
+            <option>6 people</option>
+            <option>7 people</option>
+            <option>8 people</option>
+            <option>More than 8</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select the number of guests.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="seatingPreference" class="form-label"
+            >Seating Preference</label
+          >
+          <select class="form-select" id="seatingPreference">
+            <option selected value="">No preference....</option>
+            <option>Indoor</option>
+            <option>Outdoor</option>
+            <option>Lobby</option>
+            <option>Private Room</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Book</button>
+        </div>
+      </form>
+    </div>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card mt-4 mb-5">
+            <div class="card-body bg-light">
+              <p class="mb-0">
+                <small>* We offer the special discounts to the student.</small>
+              </p>
+              <p class="mb-0">
+                <small
+                  >* Customers who want to celebrate their special events can
+                  get floral services and decoration from our dublin plate
+                  .</small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- New section: Why Choose Us -->
+    <section class="why-us container my-5">
+      <h2 class="text-center mb-4">Why Choose Dublin Plate</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-utensils"></i>
+            <h3>Helathy meal</h3>
+            <p>
+              We partnership with the local farmers to make fresh and healthy
+              meals for our customers.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fa-solid fa-face-smile"></i>
+            <h3>5 star service</h3>
+            <p>
+              Our well trained and friendly staffs will serve you in our fine
+              dinning room.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-star"></i>
+            <h3>Top-Rated</h3>
+            <p>Well known in the heart of Dublin's people for many years.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--content  -->
+    <div class="content bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-2 text-center text-md-start">
+            <h3 class="h5">Dublin plate</h3>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">About</a></li>
+              <li>
+                <a href="#" class="text-decoration-none">What We Offer</a>
+              </li>
+              <li><a href="#" class="text-decoration-none">Careers</a></li>
+              <li>
+                <a href="#" class="text-decoration-none">Become a Partner</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mt-2 text-center text-md-start">
+            <h3 class="h5">Community</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-decoration-none"
+                  >Jobs at Dublin plate</a
+                >
+              </li>
+              <li><a href="#" class="text-decoration-none">Partners</a></li>
+              <li><a href="#" class="text-decoration-none">Blog</a></li>
+              <li>
+                <a href="#" class="text-decoration-none">Find a branch</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mt-2 text-center text-md-start">
+            <h3 class="h5">More</h3>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Terms</a></li>
+              <li><a href="#" class="text-decoration-none">Privacy</a></li>
+              <li><a href="#" class="text-decoration-none">Help</a></li>
+              <li>
+                <a href="#" class="text-decoration-none">Accessibility</a>
+              </li>
+              <li><a href="#" class="text-decoration-none">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--- footer  -->
+    <footer class="bg-light py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 Dublin plate. All Rights Reserved!</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="social-icons">
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

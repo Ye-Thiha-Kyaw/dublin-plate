@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gourmet Delight - Online Order</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- home links start-->
+    <link rel="shortcut icon" href="images/WhatsApp Image 2025-04-13 at 9.33.17
+    AM.jpeg"image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- home links end -->
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <p>
+        <a href=""><img src="images/logo.jpeg" alt="logo" class="logo" /> </a>
+      </p>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dublin Plate</a>
+        <!-- Toggler Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vision.html">Our vision</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="order_page.html">Order Online</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutUs.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <div class="history-icon nav-link" title="Order History">
+                <i class="fas fa-history"></i>
+                <span class="history-count">0</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="cart-icon nav-link" title="Your Cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="text-center mt-4">
+      <h1>Welcome to Dublin Plate</h1>
+    </header>
+
+    <div class="container">
+        <div class="menu-header">
+            <h2>Menu</h2>
+            <p class="menu-tagline">Rooted in Tradition, Inspired by Innovation</p>
+        </div>
+
+        <div class="row">
+            <!-- Menu Item 1 -->
+             <div id="menu-item-croquettes" class="col-md-3 col-sm-6">
+				  <a href=vision.html>
+                <div class="menu-item">
+					
+                    <img src="images/crispy.jpeg" alt="Dublin Coddle Croquettes" />
+                    <h5 class="item-title">Dublin Coddle Croquettes</h5>
+                    <p class="item-description">Crispy potato croquettes with braised sausage, bacon, and herb cream</p>
+                    <p class="item-price">€9</p>
+                </div>
+				 </a>
+            </div>
+
+            <!-- Menu Item 2 -->
+             <div id="menu-item-chicken" class="col-md-3 col-sm-6">
+				  <a href=vision.html>
+                <div class="menu-item">
+                    <img src="images/honey.jpeg" alt="Free-Range Honey & Mustard Glazed Chicken" />
+                    <h5 class="item-title">Free-Range Honey & Mustard Glazed Chicken</h5>
+                    <p class="item-description">Crisp skin, braised cabbage, bacon lardons, and creamy colcannon</p>
+                    <p class="item-price">€22</p>
+                </div>
+				</a>
+            </div>
+
+            <!-- Menu Item 3 -->
+             <div id="menu-item-scallops" class="col-md-3 col-sm-6">
+				   <a href=vision.html>
+                <div class="menu-item">
+                    <img src="images/belly.jpeg" alt="Pan-Seared Scallops" />
+                    <h5 class="item-title">Pan-Seared Scallops</h5>
+                    <p class="item-description">Crisp pork belly, cauliflower purée, apple-fennel slaw, cider</p>
+                    <p class="item-price">€26</p>
+                </div>
+				</a>
+            </div>
+
+            <!-- Menu Item 4 -->
+            <div id="menu-item-lamb" class="col-md-3 col-sm-6">
+				<a href=vision.html>
+                <div class="menu-item">
+                    <img src="images/lamb.jpeg" alt="Herb-Crusted Rack of Irish Lamb" />
+                    <h5 class="item-title">Herb-Crusted Rack of Irish Lamb</h5>
+                    <p class="item-description">Rosemary-Dijon crust, roasted garlic mash, minted pea purée, red wine jus</p>
+                    <p class="item-price">€28</p>
+                </div>
+				</a>
+            </div>
+
+            <!-- Menu Item 5 -->
+        <div id="menu-item-boxty" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+					<a href=vision.html>
+                    <img src="images/salmon.jpeg" alt="Smoked Salmon Boxty" />
+                    <h5 class="item-title">Smoked Salmon Boxty</h5>
+                    <p class="item-description">Traditional potato pancake with Irish smoked salmon, crème fraîche, and dill</p>
+                    <p class="item-price">€11</p>
+                </div>
+				</a>
+            </div>
+
+            <!-- Menu Item 6 -->
+        <div id="menu-item-fish" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+					<a href=vision.html>
+                    <img src="images/chip.jpeg" alt="Fish & Chips" />
+                    <h5 class="item-title">Fish & Chips</h5>
+                    <p class="item-description">Ale-battered cod, triple-cooked chips, mushy peas, and tartar sauce</p>
+                    <p class="item-price">€17</p>
+                </div>
+				</a>
+            </div>
+
+            <!-- Menu Item 7 -->
+        <div id="menu-item-pie" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+					<a href=vision.html>
+                    <img src="images/pie.jpeg" alt="Traditional Dublin Bay Prawn Pie" />
+                    <h5 class="item-title">Traditional Dublin Bay Prawn Pie</h5>
+                    <p class="item-description">Buttery puff pastry, prawns, leeks, and tarragon cream sauce</p>
+                    <p class="item-price">€24</p>
+                </div>
+				</a>
+            </div>
+
+            <!-- Menu Item 8 -->
+        <div id="menu-item-baileys" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+                    <img src="images/chocolate.jpeg" alt="Baileys Chocolate Pot" />
+                    <h5 class="item-title">Baileys Chocolate Pot</h5>
+                    <p class="item-description">Silky chocolate mousse with espresso cream</p>
+                    <p class="item-price">€8</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 9 -->
+        <div id="menu-item-wild-salmon" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+                    <img src="images/lemon.webp" alt="Grilled Wild Irish Salmon" />
+                    <h5 class="item-title">Grilled Wild Irish Salmon</h5>
+                    <p class="item-description">Lemon-herb crust, crushed new potatoes, asparagus, hollandaise</p>
+                    <p class="item-price">€28</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 10 -->
+        <div id="menu-item-burger" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+                    <img src="images/burger.jpeg" alt="The Dublin Burger" />
+                    <h5 class="item-title">The Dublin Burger</h5>
+                    <p class="item-description">Dry-aged beef, Cashel Blue cheese, bacon jam, and beer-battered onions</p>
+                    <p class="item-price">€15</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 11 -->
+        <div id="menu-item-tart" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+                    <img src="images/tart.jpeg" alt="Irish Cheese & Onion Tart" />
+                    <h5 class="item-title">Irish Cheese & Onion Tart</h5>
+                    <p class="item-description">Cashel Blue and cheddar custard, caramelized onions, mixed leaf salad</p>
+                    <p class="item-price">€15</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 12 -->
+        <div id="menu-item-ginger" class="col-md-3 col-sm-6">
+                <div class="menu-item">
+                    <img src="images/ginger.jpeg" alt="Homemade ginger beer" />
+                    <h5 class="item-title">Homemade ginger beer</h5>
+                    <p class="item-description">artisan sodas</p>
+                    <p class="item-price">€4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--content  -->
+
+    <div class="content bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-2 text-center text-md-start">
+            <h3 class="h5">Dublin plate</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">What We Offer</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Become a Partner</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mt-2 text-center text-md-start">
+            <h3 class="h5">Community</h3>
+            <ul>
+              <li><a href="#">Jobs at Dublin plate</a></li>
+              <li><a href="#">Parnters</a></li>
+              <li><a href="#"> Blog</a></li>
+              <li><a href="#">Find a branch</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mt-2 text-center text-md-start">
+            <h3 class="h5">More</h3>
+            <ul>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--- footer  -->
+    <footer class="bg-light py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 Dublin plate. All Rights Reserved!</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="social-icons">
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" class="text-dark fs-5 mx-2"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
