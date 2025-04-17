@@ -6,7 +6,7 @@ const menuItems = [
         name: "Dublin Coddle Croquettes",
         description: "Crispy potato croquettes with braised sausage, bacon, and herb cream",
         price: 9.00,
-        image: "images/crispy.jpeg", 
+        image: "images/menu/crispy.jpeg", 
         category: "starters",
         source:"photo ref : https://italianfoodforever.com/2024/02/cheese-stuffed-potato-croquettes/ "
     },
@@ -15,7 +15,7 @@ const menuItems = [
         name: "Smoked Salmon Boxty",
         description: "Traditional potato pancake with Irish smoked salmon, crème fraîche, and dill",
         price: 11.00,
-        image: "images/salmon.jpeg", 
+        image: "images/menu/salmon.jpeg", 
         category: "starters",
         source:"photo ref : https://cookingwithcocktailrings.com/irish-boxty-with-smoked-salmon-irish-potato-pancakes/ "
     },
@@ -24,7 +24,7 @@ const menuItems = [
         name: "Free-Range Honey & Mustard Glazed Chicken",
         description: "Crisp skin, braised cabbage, bacon lardons, and creamy colcannon",
         price: 22.00,
-        image: "images/honey.jpeg", 
+        image: "images/menu/honey.jpeg", 
         category: "mains",
         source:"photo ref : https://hellochef.me/recipes/irish-honey-and-mustard-chicken-with-colcannon-mashed-potato-3333"
     },
@@ -33,7 +33,7 @@ const menuItems = [
         name: "Pan-Seared Scallops",
         description: "Crisp pork belly, cauliflower purée, apple-fennel slaw, cider reduction",
         price: 26.00,
-        image: "images/belly.jpeg",
+        image: "images/menu/belly.jpeg",
         category: "mains",
         source:"photo ref : https://frozenfish.direct/recipe/pan-seared-scallops-with-cauliflower-puree-and-truffle-oil-recipe/"
     },
@@ -42,7 +42,7 @@ const menuItems = [
         name: "Herb-Crusted Rack of Irish Lamb",
         description: "Rosemary-Dijon crust, roasted garlic mash, minted pea purée, red wine jus",
         price: 28.00,
-        image: "images/lamb.jpeg", 
+        image: "images/menu/lamb.jpeg", 
         category: "mains",
         source: "photo ref : https://178degrees.com/herb-crusted-lamb-rack-with-red-wine-jus/"
     },
@@ -51,7 +51,7 @@ const menuItems = [
         name: "Fish & Chips",
         description: "Ale-battered cod, triple-cooked chips, mushy peas, and tartar sauce",
         price: 17.00,
-        image: "images/chip.jpeg", 
+        image: "images/menu/chip.jpeg", 
         category: "mains",
         source: "photo ref : https://www.foodrepublic.com/2012/12/18/fr-guide-how-to-eat-fish-and-chips-in-london-and-who-does-it-best/"
     },
@@ -60,7 +60,7 @@ const menuItems = [
         name: "Traditional Dublin Bay Prawn Pie",
         description: "Buttery puff pastry, prawns, leeks, and tarragon cream sauce",
         price: 24.00,
-        image: "images/pie.jpeg", 
+        image: "images/menu/pie.jpeg", 
         category: "mains",
         source: "photo ref : https://thehappyfoodie.co.uk/recipes/dublin-bay-prawn-and-chicken-pie/"
     },
@@ -69,7 +69,7 @@ const menuItems = [
         name: "Grilled Wild Irish Salmon",
         description: "Lemon-herb crust, crushed new potatoes, asparagus, hollandaise",
         price: 28.00,
-        image: "images/lemon.webp", 
+        image: "images/menu/lemon.webp", 
         category: "mains",
         source: "photo ref : https://mealpractice.com/recipes/lemon-herb-grilled-salmon-with-garlic-mashed-potatoes-and-roasted-asparagus-UcpCRjRpWi"
     },
@@ -78,7 +78,7 @@ const menuItems = [
         name: "The Dublin Burger",
         description: "Dry-aged beef, Cashel Blue cheese, bacon jam, and beer-battered onions",
         price: 15.00,
-        image: "images/burger.jpeg", 
+        image: "images/menu/burger.jpeg", 
         category: "mains",
         source: "photo ref:  https://www.ubereats.com/ie/store/bosh-burger/EY7LkwhtXcWSEr4EOs9bLA"
     },
@@ -87,7 +87,7 @@ const menuItems = [
         name: "Irish Cheese & Onion Tart",
         description: "Cashel Blue and cheddar custard, caramelized onions, mixed leaf salad",
         price: 15.00,
-        image: "images/tart.jpeg", 
+        image: "images/menu/tart.jpeg", 
         category: "mains",
         source: "photo ref: https://www.irishtimes.com/life-and-style/food-and-drink/recipes/onion-and-cashel-blue-cheese-tart-1.2610579"
     },
@@ -96,7 +96,7 @@ const menuItems = [
         name: "Baileys Chocolate Pot",
         description: "Silky chocolate mousse with espresso cream",
         price: 8.00,
-        image: "images/chocolate.jpeg", 
+        image: "images/menu/chocolate.jpeg", 
         category: "desserts",
         source: "photo ref:  https://ilovecooking.ie/recipe-items/baileys-chocolate-cheesecake-pots"
     },
@@ -105,7 +105,7 @@ const menuItems = [
         name: "Homemade Ginger Beer",
         description: "Artisan sodas",
         price: 4.00,
-        image: "images/ginger.jpeg", 
+        image: "images/menu/ginger.jpeg", 
         category: "drinks",
         source: "photo ref: https://poppyswildkitchen.com/homemade-ginger-ale-4-flavors/"
     }
