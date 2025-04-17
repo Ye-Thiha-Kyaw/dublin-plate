@@ -160,6 +160,9 @@ body {
   border-bottom: 2px solid #7b5c3d;
 }
 
+
+
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .navbar-nav .nav-link {

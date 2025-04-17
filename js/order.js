@@ -384,6 +384,7 @@ function updateCartTotals() {
 function updateCartCount() {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     cartCount.textContent = totalItems;
+    
 }
 
 // Save cart to localStorage
