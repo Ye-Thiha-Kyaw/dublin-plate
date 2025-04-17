@@ -788,3 +788,36 @@ footer {
 .lead {
   font-family: "Roboto", sans-serif;
 }
+
+#gameContainer {
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#dishDisplay {
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+#buttons {
+  margin: 10px 0;
+}
+button {
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: #85734f;
+}
+#feedback {
+  font-size: 1em;
+  margin: 10px 0;
+  min-height: 1em;
+}
